@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% from "macros/messages.html" import render_message %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}
+  {{ render_message(this) }}
+{% endblock %}

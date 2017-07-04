@@ -1,0 +1,6 @@
+{% macro render_message(post, from_index=false) %}
+  <div class="message">
+    {{ post.body }}
+    <span>{{ post.signee }}</span>
+  </div>
+{% endmacro %}

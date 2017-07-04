@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}
+{% from "macros/messages.html" import render_message %}
+
+  <div class="card">
+    <div class="front face"style="background-image: url({{ this.image }});">
+    </div>
+    <div class="back face">
+
+      <div class="to">
+        {{ this.to }}
+      </div>
+
+      <div class="stamp">
+        {{ this.body }}
+      </div>
+
+      {% for m in site.get('/messages').pagination.items %}
+      {{ render_message(m, from_index=true) }}
+      {% endfor %}
+
+    </div>
+  </div>
+
+{% endblock %}
