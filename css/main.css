@@ -1,0 +1,94 @@
+body {
+  height: 100vh;
+  background-color: #f6f6f6;
+  text-align: center;
+  font-size: 3vmin; }
+
+.card {
+  width: 80vmin;
+  height: 80vmin;
+  position: absolute;
+  -webkit-perspective: 500vmin;
+  -moz-perspective: 500vmin;
+  perspective: 500vmin;
+  top: 50%;
+  left: 50%;
+  margin: -40vmin 0 0 -40vmin;
+  cursor: pointer; }
+
+.card:hover .face {
+  -webkit-transition: all 0.3s ease-out; }
+
+.face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: visible;
+  -webkit-transition: all 0.5s ease-out;
+  -webkit-transform-origin: 0 0;
+  -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1); }
+
+.front {
+  -webkit-transform: rotateY(-20deg);
+  z-index: 2;
+  background-color: #ccc;
+  background-position: center;
+  background-size: cover; }
+
+.back {
+  background: #fff;
+  -webkit-transform: rotateY(0deg);
+  z-index: 1;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.card:hover .front {
+  -webkit-transform: rotateY(-35deg); }
+
+.card:active .front {
+  -webkit-transform: rotateY(-165deg); }
+  .card:active .front:after {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+
+.card:active .back {
+  -webkit-transform: rotateY(-15deg); }
+
+.to,
+.stamp,
+.message {
+  padding: 2vmin; }
+  .to p,
+  .stamp p,
+  .message p {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em; }
+  .to :first-child,
+  .stamp :first-child,
+  .message :first-child {
+    margin-top: 0; }
+  .to :last-child,
+  .stamp :last-child,
+  .message :last-child {
+    margin-bottom: 0; }
+
+.to,
+.message {
+  font-family: 'Dawning of a New Day', cursive; }
+
+.stamp {
+  width: 100%; }
+
+/*# sourceMappingURL=main.css.map */
