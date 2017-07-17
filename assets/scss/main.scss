@@ -21,6 +21,7 @@ body {
 .card:hover .face {
   -webkit-transition: all 0.3s ease-out;
 }
+
 .face {
   position: absolute;
   top: 0;
@@ -34,6 +35,7 @@ body {
   -moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
   box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
 }
+
 .front {
   -webkit-transform: rotateY(-20deg);
   z-index: 2;
@@ -41,6 +43,7 @@ body {
   background-position: center;
   background-size: cover;
 }
+
 .back {
   background: #fff;
   -webkit-transform: rotateY(0deg);
@@ -51,24 +54,36 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .card:hover .front {
   -webkit-transform: rotateY(-35deg);
 }
-.card:active .front{
-  -webkit-transform: rotateY(-165deg);
 
-  &:after {
-    content: '';
-    background-color: rgba(#fff,0.95);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+#open_card {
+  display: none;
+  
+  &:checked {
+    & + .card {
+
+      .front{
+        -webkit-transform: rotateY(-165deg);
+
+        &:after {
+          content: '';
+          background-color: rgba(#fff,0.95);
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+
+    .back {
+      -webkit-transform: rotateY(-15deg);
+    }
   }
-}
-.card:active .back {
-  -webkit-transform: rotateY(-15deg);
 }
 
 .to,

@@ -3,7 +3,8 @@
 {% block body %}
 {% from "macros/messages.html" import render_message %}
 
-  <div class="card">
+  <input type="checkbox" id="open_card">
+  <label class="card" for="open_card">
     <div class="front face"style="background-image: url({{ this.image }});">
     </div>
     <div class="back face">
@@ -21,6 +22,6 @@
       {% endfor %}
 
     </div>
-  </div>
+  </label>
 
 {% endblock %}
