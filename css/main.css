@@ -17,7 +17,8 @@ body {
   cursor: pointer; }
 
 .card:hover .face {
-  -webkit-transition: all 0.3s ease-out; }
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
 
 .face {
   position: absolute;
@@ -26,22 +27,36 @@ body {
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: visible;
+  backface-visibility: visible;
   -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -o-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
   -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
   -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1); }
 
 .front {
+  -o-transform: rotateY(-20deg);
+  -ms-transform: rotateY(-20deg);
   -webkit-transform: rotateY(-20deg);
+  transform: rotateY(-20deg);
   z-index: 2;
   background-color: #ccc;
   background-position: center;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover; }
 
 .back {
   background: #fff;
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
   -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
   z-index: 1;
   overflow: auto;
   display: flex;
@@ -50,21 +65,31 @@ body {
   flex-wrap: wrap; }
 
 .card:hover .front {
-  -webkit-transform: rotateY(-35deg); }
+  -o-transform: rotateY(-35deg);
+  -ms-transform: rotateY(-35deg);
+  -webkit-transform: rotateY(-35deg);
+  transform: rotateY(-35deg); }
 
-.card:active .front {
-  -webkit-transform: rotateY(-165deg); }
-  .card:active .front:after {
-    content: '';
-    background-color: rgba(255, 255, 255, 0.95);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; }
-
-.card:active .back {
-  -webkit-transform: rotateY(-15deg); }
+#open_card {
+  display: none; }
+  #open_card:checked + .card .front {
+    -o-transform: rotateY(-165deg);
+    -ms-transform: rotateY(-165deg);
+    -webkit-transform: rotateY(-165deg);
+    transform: rotateY(-165deg); }
+    #open_card:checked + .card .front:after {
+      content: '';
+      background-color: rgba(255, 255, 255, 0.95);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+  #open_card:checked .back {
+    -o-transform: rotateY(-15deg);
+    -ms-transform: rotateY(-15deg);
+    -webkit-transform: rotateY(-15deg);
+    transform: rotateY(-15deg); }
 
 .to,
 .stamp,
