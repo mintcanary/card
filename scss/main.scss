@@ -43,7 +43,7 @@ body {
 }
 
 .back {
-  background: #fff;
+  background-color: #fff;
   @include transform(rotateY(0deg));
   z-index: 1;
   overflow: auto;
@@ -51,6 +51,9 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card:hover .front {
@@ -66,14 +69,17 @@ body {
       .front{
         @include transform(rotateY(-165deg));
 
-        &:after {
-          content: '';
+        span {
           background-color: rgba(#fff,0.95);
           position: absolute;
           top: 0;
           right: 0;
           bottom: 0;
           left: 0;
+          @include transform(scale(-1, 1));
+          background-size: contain;
+          background-position: right bottom;
+          background-repeat: no-repeat;
         }
       }
     }

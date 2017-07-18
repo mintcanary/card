@@ -52,7 +52,7 @@ body {
   background-size: cover; }
 
 .back {
-  background: #fff;
+  background-color: #fff;
   -o-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
   -webkit-transform: rotateY(0deg);
@@ -62,7 +62,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; }
 
 .card:hover .front {
   -o-transform: rotateY(-35deg);
@@ -77,14 +80,20 @@ body {
     -ms-transform: rotateY(-165deg);
     -webkit-transform: rotateY(-165deg);
     transform: rotateY(-165deg); }
-    #open_card:checked + .card .front:after {
-      content: '';
+    #open_card:checked + .card .front span {
       background-color: rgba(255, 255, 255, 0.95);
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
-      left: 0; }
+      left: 0;
+      -o-transform: scale(-1, 1);
+      -ms-transform: scale(-1, 1);
+      -webkit-transform: scale(-1, 1);
+      transform: scale(-1, 1);
+      background-size: contain;
+      background-position: right bottom;
+      background-repeat: no-repeat; }
   #open_card:checked .back {
     -o-transform: rotateY(-15deg);
     -ms-transform: rotateY(-15deg);
