@@ -5,17 +5,22 @@
 
   <input type="checkbox" id="open_card">
   <label class="card" for="open_card">
-    <div class="front face"style="background-image: url({{ this.image }});">
+    <div class="front face" style="background-image: url({{ this.image }});">
+      <span{% if this.inner_front_image %} style="background-image: url({{ this.inner_front_image }});"{% endif %}></span>
     </div>
-    <div class="back face">
+    <div class="back face"{% if this.inner_image %} style="background-image: url({{ this.inner_image }});"{% endif %}>
 
+      {% if this.to %}
       <div class="to">
         {{ this.to }}
       </div>
+      {% endif %}
 
+      {% if this.body %}
       <div class="stamp">
         {{ this.body }}
       </div>
+      {% endif %}
 
       {% for m in site.get('/messages').pagination.items %}
       {{ render_message(m, from_index=true) }}
